@@ -5,8 +5,12 @@ import pandas as pd
 
 
 class Table:
+<<<<<<< HEAD
     tableWay = '../socios.xlsx'
     table = pd.read_excel(tableWay)
+=======
+    table = pd.read_excel('socios.xlsx')
+>>>>>>> 0537a6c6bcbf779cefdede085506c923b8d765fb
 
     def tableTests(self):
 
