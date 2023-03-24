@@ -4,7 +4,6 @@
 # pip install webdriver-manager
 # Browser webdriver
 
-<<<<<<< HEAD
 import sys
 import os
 
@@ -15,16 +14,11 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from model import Table
 from model.Table import Table
 
-=======
->>>>>>> 0537a6c6bcbf779cefdede085506c923b8d765fb
 from selenium import webdriver  # import the selenium
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service  # use to run the chrome drive
 import time
-<<<<<<< HEAD
-=======
 from model.Table import Table
->>>>>>> 0537a6c6bcbf779cefdede085506c923b8d765fb
 
 # ele vai instalar a versão do driver mais recente
 serviceDriver = Service(ChromeDriverManager().install())
@@ -46,7 +40,7 @@ class SendEmail:
 
     # when the login starts, the user puts his email and password and the bot continues
     def loginValidation(self):
-        input()
+        input("Pressione enter após logar na sua conta.")
 
     def send_email(self):
 
@@ -70,6 +64,13 @@ class SendEmail:
 
         self.subjectInput = input("Digite o assunto: ")
         self.bodyInput = input("Digite o corpo do email: ")
+
+        self.sendAttach = input("Deseja enviar algum arquivo?(s/n)")
+        time.sleep(1)
+
+        if(self.sendAttach.lower() == "s"):
+            self.browser.find_element('xpath','//*[@id=":94"]').click()
+            input("Pressione enter para continuar")
 
         self.browser.find_element(
             'xpath', '//*[@id=":7h"]'
